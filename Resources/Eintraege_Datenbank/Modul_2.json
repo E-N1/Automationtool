@@ -1,0 +1,17 @@
+{
+    "TestfaelleJeKategorien": [
+        {
+            "Kategorie_1": 11
+        },
+        {
+            "Kategorie_2": 5
+        },
+        {
+            "Kategorie_3": 4
+        },
+        {
+            "Kategorie_4": 5
+        }
+    ],
+    "GesamtTF": 25
+}

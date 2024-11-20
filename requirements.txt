@@ -1,0 +1,9 @@
+smbprotocol
+paramiko
+watchdog 
+PyQt5
+scp
+bs4
+pyodbc
+psutil
+python-dotenv

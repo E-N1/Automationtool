@@ -1,0 +1,6 @@
+**/__pycache__/
+Resources/Logfiles_Errors/*
+.idea/workspace.xml
+venv/
+Resources/masch*_reporter.html
+.env

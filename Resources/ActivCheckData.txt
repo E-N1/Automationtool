@@ -1,0 +1,6 @@
+# IGNORE THIS FILE, BUT DO NOT DELETE IT!
+
+This file is for checking whether the automated tests are still in progress.
+If this file no longer exists, this means that the tests have been completed.
+It is generated with every remote automated start of test runs, which is related to
+associated with the automation tool.

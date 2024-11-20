@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Author: Enver E., Date: 06/24  -->
+  <title>Automationtool-Logs-[!!NameOfMasch!!]</title>
+  <style>
+    .current-state{
+      width: 100%;
+      height: 30px;
+      background-color: #f0f0f0;
+      display: flex;
+      background-color: white;
+      align-items: center;
+      flex-direction: inherit;
+    }
+    .current-state-digit{
+      width: 100%;
+      color:black;
+      background-color: white;
+    }
+    .progress-container {
+        display: flex;
+        background-color: white;
+        align-items: center;
+        flex-direction: inherit;
+    }
+    .progress-bar-digit {
+      color:black;
+      background-color: white;
+    }
+    .progress-bar-container {
+        width: 100%;
+        background-color: #e0e0e0;
+        border-radius: 25px;
+        overflow: hidden;
+        margin: 0 10px;
+        flex-grow: 1;
+    }
+
+    .progress-bar {
+        width: 0%;
+        height: 30px;
+        background-color: #76c7c0;
+        text-align: center;
+        line-height: 30px;
+        color: black;
+        border-radius: 25px 0 0 25px;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111; /* Hintergrund mit leichtem Grauanteil */
+    }
+    .bdiv {
+      background-color: #ff00ff;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    #infos, #infoPfad, #infoLastChange {
+      text-align: center;
+      color: #fff;
+      font-size: 1.3rem;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    .columns{
+      align-items: center;
+      text-align: center;
+    }
+    .img{
+      text-align: center;
+    }
+  </style>
+  <script>
+    // Funktion zum periodischen Neuladen der kompletten Seite
+    function autoReload() {
+      // Setzt ein Intervall für das Neuladen alle 5 Sekunden (5000 Millisekunden)
+      setInterval(() => {
+        window.location.reload();
+      }, 5000);
+    }
+    // Initiieren des Reload-Vorgangs, sobald die Seite geladen ist
+    window.onload = autoReload;
+  </script>
+<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script type='text/javascript'>
+google.charts.load('current', {'packages':['corechart']});
+var options = {title: 'No title specified for this chart', is3D: true, width:400, colors:['#4169E1', '#f32c22', '#7bb526']};
+[!!SCRIPTHERE!!]
+</script>
+</head>
+<body>
+  <header>
+    <h1>Logs - [!!NameOfMasch!!]</h1>
+  </header>
+  <section id = "demirtag">
+  </section>
+  <section>
+      <section>
+        <p id = "infoPfad">[!!INFOPFAD!!]</p>
+        <!-- Start infoLastChange -->
+        <p id = 'infoLastChange'>Letzte Änderung: </p>
+        <!-- End infoLastChange -->
+      </section>
+<center>
+<table class='columns' style='border-spacing: 20px;'>
+  [!!TABLEHERE!!]
+</table>
+</center>
+  </section>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+const progressData = [
+[!!PROGRESSBARDATA!!]
+];
+
+  function updateProgressBars(data) {
+        data.forEach(item => {
+            const progressBar = document.getElementById(item.id);
+            if (progressBar) {
+                progressBar.style.width = `${item.progress}%`;
+                progressBar.textContent = `${item.progress}%`;
+            }
+        });
+    }
+
+    // Ruft die Funktion auf, um die Progress Bars zu aktualisieren.
+    updateProgressBars(progressData);
+});
+</script>
+<footer>
+</footer>
+</html>
