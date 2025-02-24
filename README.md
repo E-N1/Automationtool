@@ -39,6 +39,6 @@ It is important to customize this tool to fit your own environment and requireme
 
 
 ## Tool looks like:
-![Home](Resources\Images\home.png)
+![Home](Resources/Images/home.png)
 ----
-![Report](Resources\Images\report.png)
+![Report](Resources/Images/report.png)
