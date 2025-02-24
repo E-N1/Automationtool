@@ -1,37 +1,44 @@
 # Automationtool
-Das Tool zur Unterstützung automatisierten Tests beihilft. Es umfasst die automatisierte Änderung von Konfigurationsdateien virtueller Maschinen sowie die automatisierte Installation und Testausführung. Zusätzlich wird eine lokale HTML-Anwendung zur Früherkennung von Fehlern im Testlauf, sichtbar als Tortendiagramm, erstellt. Und vieles mehr.
+The tool for supporting automated tests. It includes the automated modification of virtual machine configuration files as well as automated installation and test execution. In addition, a local HTML application is created for the early detection of errors in the test run, visible as a pie chart. And much more.
 
 ## Setup
-- requirements.txt 
-- install_openssh.bat - auf jeder Maschine einfügen und ausführen. Danach eine SSH-Verbindung (Host-VM) zu den Maschinen aufbauen.
+- pip install -r requirements.txt
+- install_openssh.bat - insert and execute on each machine. Then establish an SSH connection (host VM) to the machines.
 
 
 
-## SSH-Verbindung:
-### 1. SSH-Schlüssel auf dem Rechner erzeugen:
+## SSH connection
+1. generate SSH key on the machine:
 
 * ssh-keygen
-    * Folgen Sie den Anweisungen und drücken Sie die Eingabetaste, um die Standardwerte zu akzeptieren.
+    * Follow the instructions and press Enter to accept the default values.
 
-2. Öffentlichen Schlüssel auf den Zielcomputer kopieren:
+2. copy the public key to the target computer:
 * ssh-copy-id john@192.168.1.100
-    * Geben Sie das Passwort des Benutzers john ein.
+    * Enter the password of the user john.
 
-3. SSH-Verbindung mit Schlüssel herstellen:
+3. establish SSH connection with key:
 
 * ssh john@192.168.1.100
-    * Nach diesen Schritten können Sie sich ohne erneute Passwortabfrage auf dem Zielcomputer anmelden, solange der öffentliche Schlüssel im ~/.ssh/authorized_keys-Datei des Benutzers auf dem Zielcomputer vorhanden ist.
+    * After these steps, you can log on to the target computer without having to enter the password again as long as the public key is available in the ~/.ssh/authorized_keys file of the user on the target computer.
 
 
-machines.json, die beim ersten Start erstellt wird:
+machines.json, which is created at the first start:
 ```
 {
-    "Maschine100": {
-        "modul": ["Modul_1", "Modul_2", "Modul_3","Modul_4"],
-        "path": "\\HOSTNAME\\FREIGABE\\MODUL-ORDNER\\PFAD\\ZUR\\DATEI\\DATEI.ini"
+    "machine100": {
+        "modul": ["Modul_1", "Modul_2", "Modul_3", "Modul_4"],
+        "path": "\\HOSTNAME\\RELEASE\\MODULE\\PATH\\TO\\YOUR\\DATA.ini"
     },
     ...
     .
 }
-    
 ```
+## Note
+It is important to customize this tool to fit your own environment and requirements.
+
+
+## Tool looks like:
+![Home](Resources\Images\home.png)
+----
+![Report](Resources\Images\report.png)
